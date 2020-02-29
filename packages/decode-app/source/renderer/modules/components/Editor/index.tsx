@@ -67,6 +67,8 @@ const Editor: React.FC<EditorProperties> = (
         minimap: {
             enabled: false,
         },
+        contextmenu: false,
+        // automaticLayout: true,
     };
 
 
