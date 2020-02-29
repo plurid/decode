@@ -12,6 +12,9 @@ import {
 } from '@plurid/plurid-themes';
 
 import MonacoEditor from 'react-monaco-editor';
+import {
+    editor
+} from 'monaco-editor';
 
 import {
     StyledEditor,
@@ -59,8 +62,11 @@ const Editor: React.FC<EditorProperties> = (
         stateEditors,
     } = properties;
 
-    const monacoOptions = {
-        selectOnLineNumbers: true
+    const monacoOptions: editor.IEditorOptions = {
+        selectOnLineNumbers: true,
+        minimap: {
+            enabled: false,
+        },
     };
 
 
@@ -103,7 +109,7 @@ const Editor: React.FC<EditorProperties> = (
     return (
         <StyledEditor>
             <MonacoEditor
-                width="800"
+                width="1440"
                 height="600"
                 language="javascript"
                 theme="vs-dark"
