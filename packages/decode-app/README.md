@@ -34,6 +34,10 @@ Download system-specific application from [decode.plurid.com/install](https://de
 
 ## Screenshots
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/plurid/decode/master/about/identity/screenshot-1.png" height="500px">
+</p>
+
 
 
 ## Build
