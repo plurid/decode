@@ -1,4 +1,5 @@
 import React, {
+    useRef,
     useState,
     useEffect,
 } from 'react';
@@ -72,8 +73,10 @@ const Editor: React.FC<EditorProperties> = (
     };
 
 
+    const monacoEditor = useRef<editor.ICodeEditor>();
+
     /** state */
-    const [editor, setEditor] = useState<IEditor>();
+    const [_, setEditor] = useState<IEditor>();
     const [code, setCode] = useState('');
 
 
@@ -89,7 +92,10 @@ const Editor: React.FC<EditorProperties> = (
         editor: any,
         monaco: any,
     ) => {
-        console.log('editorDidMount', editor);
+        monacoEditor.current = editor;
+
+        // console.log('editorDidMount editor', editor);
+        // console.log('editorDidMount monaco', monaco);
         editor.focus();
     }
 
@@ -106,14 +112,30 @@ const Editor: React.FC<EditorProperties> = (
         id,
     ]);
 
+    useEffect(() => {
+        if (monacoEditor.current) {
+            console.log(monacoEditor.current.hasTextFocus())
+            // monacoEditor.current.onMouseMove(({ event }: editor.IEditorMouseEvent) => {
+            //     console.log(event);
+            // });
+        }
+    }, [
+        monacoEditor.current,
+    ])
+
 
     /** render */
     return (
-        <StyledEditor>
+        <StyledEditor
+            style={{
+                userSelect: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' :  'none',
+                pointerEvents: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' : 'none',
+            }}
+        >
             <MonacoEditor
                 width="1440"
                 height="600"
-                language="javascript"
+                language="typescript"
                 theme="vs-dark"
                 value={code}
                 options={monacoOptions}
