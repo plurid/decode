@@ -70,6 +70,9 @@ const Editor: React.FC<EditorProperties> = (
         },
         contextmenu: false,
         // automaticLayout: true,
+        fontSize: 17,
+        lineHeight: 34,
+        fontFamily: 'Menlo, Monaco, \'Courier New\', monospace',
     };
 
 
@@ -128,8 +131,8 @@ const Editor: React.FC<EditorProperties> = (
     return (
         <StyledEditor
             style={{
-                userSelect: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' :  'none',
-                pointerEvents: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' : 'none',
+                // userSelect: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' :  'none',
+                // pointerEvents: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' : 'none',
             }}
         >
             <MonacoEditor
