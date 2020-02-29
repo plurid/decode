@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 
 
@@ -56,6 +57,10 @@ module.exports = [
             filename: 'renderer.js'
         },
         plugins: [
+            new MonacoWebpackPlugin({
+                // available options are documented at
+                // https://github.com/Microsoft/monaco-editor-webpack-plugin#options
+            }),
             new HtmlWebpackPlugin({
                 template: './source/window/index.html'
             }),
