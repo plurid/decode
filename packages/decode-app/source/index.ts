@@ -9,11 +9,21 @@ import {
 
 
 
+app.allowRendererProcessReuse = true;
+
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win: any;
 
-function createWindow() {
+const createWindow = () => {
+    /**
+     * HACK:
+     * Uncomment to install extensions.
+     */
+    // installExtensions();
+
+
     // Create the browser window.
     win = new BrowserWindow({
         width: 1000,
@@ -61,9 +71,8 @@ function createWindow() {
         // when you should delete the corresponding element.
         win = null;
     });
-
-    installExtensions();
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -86,6 +95,3 @@ app.on('activate', () => {
         createWindow();
     }
 });
-
-
-app.allowRendererProcessReuse = true;
