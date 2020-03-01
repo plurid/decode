@@ -21,3 +21,7 @@ Plurid-Based Code Editor
 <p align="center">
     <img src="https://raw.githubusercontent.com/plurid/decode/master/about/identity/screenshot-1.png" height="500px">
 </p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/plurid/decode/master/about/identity/screenshot-2.png" height="500px">
+</p>
