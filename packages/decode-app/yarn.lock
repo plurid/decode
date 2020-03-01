@@ -383,6 +383,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
+"@plurid/decode-editor@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@plurid/decode-editor/-/decode-editor-0.0.0.tgz#7e4331df8559a02d43804bacec4b5251677fea09"
+  integrity sha512-aqJW+xhR7lmOLcOCLcKZ/+tWpuK1AHJxYhigeBYWEThKLi1T+JgjGkoBVXo8Ajv10Z6XtSLbLBsHfMfxKTT6ew==
+
 "@plurid/plurid-data@^0.1.98":
   version "0.1.98"
   resolved "https://registry.yarnpkg.com/@plurid/plurid-data/-/plurid-data-0.1.98.tgz#fffb767684886bf59230540e6eeb8a832e2e5e8d"
