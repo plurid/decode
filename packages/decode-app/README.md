@@ -21,7 +21,8 @@
 
 
 
-+ [Install](#install)
++ [Usage](#usage)
++ [Screenshots](#screenshots)
 + [Build](#build)
 
 
