@@ -119,6 +119,17 @@ const Pluriverse: React.FC<PluriverseProperties> = (
                     ),
                 },
             },
+            {
+                path: '/two',
+                component: {
+                    element: () => (
+                        <Editor
+                            id={''}
+                            pluriverseID={pluriverse.id}
+                        />
+                    ),
+                },
+            },
         ];
 
         setPluridPages(pluridPages);
@@ -126,6 +137,7 @@ const Pluriverse: React.FC<PluriverseProperties> = (
 
         const pluridView = [
             '/one',
+            '/two',
         ];
 
         setPluridView(pluridView);
