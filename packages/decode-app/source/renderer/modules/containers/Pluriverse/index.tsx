@@ -137,7 +137,7 @@ const Pluriverse: React.FC<PluriverseProperties> = (
 
         const pluridView = [
             '/one',
-            '/two',
+            // '/two',
         ];
 
         setPluridView(pluridView);

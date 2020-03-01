@@ -81,6 +81,7 @@ const Editor: React.FC<EditorProperties> = (
     /** state */
     const [_, setEditor] = useState<IEditor>();
     const [code, setCode] = useState('');
+    const [transforming, setTransforming] = useState(false);
 
 
     /** handlers */
@@ -124,15 +125,47 @@ const Editor: React.FC<EditorProperties> = (
         }
     }, [
         monacoEditor.current,
-    ])
+    ]);
+
+
+    useEffect(() => {
+        const handleWheel = (
+            event: any,
+        ) => {
+            console.log('wheel');
+            if (event.shiftKey || event.altKey || event.ctrlKey || event.metaKey) {
+                setTransforming(true);
+            }
+        }
+
+        const handleKeyUp = (
+            event: any,
+        ) => {
+            const {
+                key,
+            } = event;
+
+            if (key === 'Shift' || key === 'Alt' || key === 'Ctrl' || key === 'Meta') {
+                setTransforming(false);
+            }
+        }
+
+        window.addEventListener('wheel', handleWheel);
+        window.addEventListener('keyup', handleKeyUp);
+
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('keyup', handleKeyUp);
+        }
+    });
 
 
     /** render */
     return (
         <StyledEditor
             style={{
-                // userSelect: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' :  'none',
-                // pointerEvents: monacoEditor.current && monacoEditor.current.hasTextFocus() ? 'initial' : 'none',
+                userSelect: transforming ? 'none' : undefined,
+                pointerEvents: transforming ? 'none' : undefined,
             }}
         >
             <MonacoEditor
