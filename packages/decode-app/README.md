@@ -26,9 +26,9 @@
 
 
 
-## Install
+## Usage
 
-Download system-specific application from [decode.plurid.com/install](https://decode.plurid.com/install).
+Download system-specific application from [decode.plurid.com/install](https://decode.plurid.com/install) or use the online [editor](https://decode.plurid.com).
 
 
 
