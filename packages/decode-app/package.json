@@ -25,6 +25,7 @@
         "electron.windows": "yarn build && electron-packager ./build/ decode --overwrite --asar=true --platform=win32 --arch=ia32 --icon=./build/assets/meta/decode.ico --prune=true --out=decode --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"decode\""
     },
     "dependencies": {
+        "@plurid/decode-editor": "^0.0.0",
         "@plurid/plurid-functions": "^0.1.7",
         "@plurid/plurid-icons-react": "^0.1.18",
         "@plurid/plurid-react": "^0.1.107",
