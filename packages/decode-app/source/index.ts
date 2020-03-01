@@ -34,6 +34,12 @@ const createWindow = () => {
         title: 'decode',
 
         /**
+         * Show the window gracefully.
+         * https://www.electronjs.org/docs/api/browser-window#showing-window-gracefully
+         */
+        backgroundColor: '#000000',
+
+        /**
          * BUG
          * The cursor is not correctly displayed in the place where the normal topbar would be.
          * https://github.com/electron/electron/issues/5723
