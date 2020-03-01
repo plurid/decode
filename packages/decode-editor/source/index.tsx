@@ -1,3 +1,1 @@
-export const DecodeEditor = () => {
-
-}
+export * from './theme';
