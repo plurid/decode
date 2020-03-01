@@ -68,7 +68,7 @@ const Pluriverse: React.FC<PluriverseProperties> = (
     } = properties;
 
     const pluridAppConfiguration: RecursivePartial<PluridConfiguration> = {
-        theme: 'plurid',
+        theme: 'decode',
         space: {
             layout: {
                 type: SPACE_LAYOUT.COLUMNS,

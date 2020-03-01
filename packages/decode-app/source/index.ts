@@ -3,9 +3,10 @@ import {
     BrowserWindow,
 } from 'electron';
 
-import {
-    installExtensions,
-} from './window/utilities/devtools';
+/** Uncomment to install extensions. */
+// import {
+//     installExtensions,
+// } from './window/utilities/devtools';
 
 
 
@@ -38,6 +39,7 @@ const createWindow = () => {
          * https://www.electronjs.org/docs/api/browser-window#showing-window-gracefully
          */
         backgroundColor: '#000000',
+        show: false,
 
         /**
          * BUG
@@ -76,6 +78,10 @@ const createWindow = () => {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         win = null;
+    });
+
+    win.once('ready-to-show', () => {
+        win.show();
     });
 }
 
